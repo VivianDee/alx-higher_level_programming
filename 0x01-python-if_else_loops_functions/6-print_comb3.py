@@ -6,4 +6,4 @@ for num1 in range(0, 9):
         elif num1 == num2 or num1 > num2:
             num2 += 1
         else:
-            print("{}, ".format((num1 * 10) + num2), end="")
+            print("{0:02}, ".format((num1 * 10) + num2), end="")
