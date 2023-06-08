@@ -64,9 +64,7 @@ Here are some recommended resources for learning Python:
 
 ## Contributing
 
-Contributions to this repository
-
- are welcome! If you find any errors, have suggestions, or want to share additional resources, please feel free to submit a pull request.
+Contributions to this repository are welcome! If you find any errors, have suggestions, or want to share additional resources, please feel free to submit a pull request.
 
 ## License
 
