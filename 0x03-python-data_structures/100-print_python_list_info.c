@@ -7,7 +7,7 @@
  * @p: A pointer
  */
 
-voi12ddd print_python_list_info(PyObject *p)
+void print_python_list_info(PyObject *p)
 {
 	int i;
 	PyListObject *list;
