@@ -31,8 +31,10 @@ int is_palindrome(listint_t **head)
 		prev = slow;
 		slow = next;
 	}
-	while (prev != NULL && slow != NULL)
+	while (slow != NULL)
 	{
+		if (prev == NULL)
+			return(0);
 		if (prev->n != slow->n)
 			return (0);
 		slow = slow->next;
