@@ -2,15 +2,15 @@
 #include <stdio.h>
 
 /**
-  * print_python_list_info - A function that prints some basic
-  *info about Python lists
-  * @p: A pointer
-  */
+ * print_python_list_info - A function that prints some basic
+ *info about Python lists
+ * @p: A pointer
+ */
 
-void print_python_list_info(PyObject *p)
+voi12ddd print_python_list_info(PyObject *p)
 {
 	int i;
-	PyListObject *ll;
+	PyListObject *list;
 
 	list = (PyListObject *)p;
 	printf("[*] Size of the Python List = %ld\n", list->ob_base.ob_size);
