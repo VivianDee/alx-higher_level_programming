@@ -2,4 +2,4 @@
 def simple_delete(a_dictionary, key=""):
     if key in list(a_dictionary):
         del a_dictionary[key]
-    return dic(a_dictionary)
+    return a_dictionary
