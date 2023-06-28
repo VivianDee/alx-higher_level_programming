@@ -64,14 +64,15 @@ class SinglyLinkedList:
         """sorted_insert inserts nodes in the linked list"""
         node = Node(value)
 
-        if self.__head is None:
+        if self.__head is None or value < self.__head.data:
             node.next_node = self.__head
             self.__head = node
         else:
             current = self.__head
-            while current.next_node is not None:
+            while current.next_node is not None and value >= current.next_node.data:
                 current = current.next_node
 
+            node.next_node = current.next_node
             current.next_node = node
 
     def __str__(self):
