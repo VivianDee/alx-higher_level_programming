@@ -74,12 +74,12 @@ class SinglyLinkedList:
             node.next_node = self.__head
             self.__head = node
         else:
-            current = self.__head
-            while current.next_node is not None and value >= current.next_node.data:
-                current = current.next_node
+            cur = self.__head
+            while cur.next_node is not None and value >= cur.next_node.data:
+                cur = cur.next_node
 
-            node.next_node = current.next_node
-            current.next_node = node
+            node.next_node = cur.next_node
+            cur.next_node = node
 
     def __str__(self):
         """__str__ prints out the linked list"""
