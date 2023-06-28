@@ -10,9 +10,8 @@ class Node:
             next_node (int): The next node of the object. Defaults to 0.
         """
     def __init__(self, data=0, next_node=None):
-            self.__data = data
-            self.__next_node = next_node
-
+        self.__data = data
+        self.__next_node = next_node
 
     @property
     def data(self):
@@ -51,14 +50,11 @@ class Node:
             raise TypeError("next_node must be a Node object")
 
 
-
 """The class SinglyLinkedList defines a singly linked list"""
 
-class SinglyLinkedList:
-    """Class SinglyLinkedList creates the linked list.
 
-        Args: There are no arguments
-    """
+class SinglyLinkedList:
+    """Class SinglyLinkedList creates the linked list."""
 
     def __init__(self):
         """Initialize the class with head."""
