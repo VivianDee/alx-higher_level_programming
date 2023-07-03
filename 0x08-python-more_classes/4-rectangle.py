@@ -78,3 +78,8 @@ class Rectangle:
         else:
             string += "\n"
         return str(string[:-1])
+
+    def __repr__(self):
+        """Return a canonical string representation of the rectangle"""
+        return str("Rectangle(" + str(self.__width) + ", "
+                   + str(self.__height) + ")")
