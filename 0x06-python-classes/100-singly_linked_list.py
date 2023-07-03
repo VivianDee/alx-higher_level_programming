@@ -10,8 +10,14 @@ class Node:
             next_node (int): The next node of the object. Defaults to 0.
         """
     def __init__(self, data=0, next_node=None):
-        self.__data = data
-        self.__next_node = next_node
+        if isinstance(data, int):
+            self.__data = data
+        else:
+            raise TypeError("data must be an integer")
+        if isinstance(next_node, Node) or next_node is None:
+            self.__next_node = next_node
+        else:
+            raise TypeError("next_node must be a Node object")
 
     @property
     def data(self):
@@ -26,7 +32,7 @@ class Node:
                 value (int): The new data of the square
 
         """
-        if isinstance(value, int) or value is None:
+        if isinstance(value, int):
             self.__data = value
         else:
             raise TypeError("data must be an integer")
@@ -68,20 +74,19 @@ class SinglyLinkedList:
             node.next_node = self.__head
             self.__head = node
         else:
-            current = self.__head
-            while current.next_node is not None and value >= current.next_node.data:
-                current = current.next_node
+            cur = self.__head
+            while cur.next_node is not None and value >= cur.next_node.data:
+                cur = cur.next_node
 
-            node.next_node = current.next_node
-            current.next_node = node
+            node.next_node = cur.next_node
+            cur.next_node = node
 
     def __str__(self):
         """__str__ prints out the linked list"""
-        list = ""
+        listt = ""
         head = self.__head
-        while head.next_node is not None:
-            list += str(head.data)
+        while head is not None:
+            listt += str(head.data)
             head = head.next_node
-            if head.next_node is not None:
-                list += "\n"
-        return list
+            listt += "\n"
+        return listt[:-1]

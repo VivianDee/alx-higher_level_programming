@@ -54,11 +54,9 @@ class Square:
                 value (tuple): The new position of the square
 
         """
-        if isinstance(value, tuple) and len(value) == 2:
-            if int(value[0]) > 0 and int(value[1]) > 0:
-                self.__position = value
-            else:
-                raise TypeError("position must be a tuple of 2 positive integers")
+        if isinstance(value, tuple) and len(value) == 2 and \
+                int(value[0]) > 0 and int(value[1]) > 0:
+            self.__position = value
         else:
             raise TypeError("position must be a tuple of 2 positive integers")
 
@@ -86,4 +84,4 @@ class Square:
                 string += " " * self.__position[0] + "#" * self.__size + "\n"
         else:
             string += "\n"
-        return str(string)
+        return str(string[:-1])
