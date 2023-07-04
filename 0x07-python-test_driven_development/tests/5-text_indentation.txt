@@ -1,0 +1,38 @@
+#5-text_indentation.txt
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+>>> text_indentation("Hello. How are you? I am good.")
+Hello
+<BLANKLINE>
+How are you
+<BLANKLINE>
+I am good
+<BLANKLINE>
+
+>>> text_indentation("This is a test: One. Two? Three.")
+This is a test
+<BLANKLINE>
+One
+<BLANKLINE>
+Two
+<BLANKLINE>
+Three
+<BLANKLINE>
+
+>>> text_indentation(123)
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
+
+>>> text_indentation("""Lorem ipsum dolor sit amet, consectetur adipiscing elit.""")
+Lorem ipsum dolor sit amet, consectetur adipiscing elit
+<BLANKLINE>
+
+>>> text_indentation("""Lorem ipsum""")
+Lorem ipsum
+
+>>> text_indentation((5,6))
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
