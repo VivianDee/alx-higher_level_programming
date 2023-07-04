@@ -4,7 +4,6 @@
 """
 
 
-
 def text_indentation(text):
     """
     Prints a text with 2 new lines after each of these characters: ., ? and :
@@ -23,7 +22,7 @@ def text_indentation(text):
             print()
             print()
         else:
-            if text[i] == ' ' and text[(i -1)] in ['.', '?', ':']:
+            if text[i] == ' ' and text[(i - 1)] in ['.', '?', ':']:
                 pass
             else:
                 print(text[i], end="")
