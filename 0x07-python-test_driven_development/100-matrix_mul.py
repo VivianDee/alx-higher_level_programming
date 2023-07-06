@@ -10,7 +10,7 @@ def validate_matrix(matrix, name):
         raise TypeError(f"{name} must be a list")
     if not all(isinstance(row, list) for row in matrix):
         raise TypeError(f"{name} must be a list of lists")
-    if len(matrix) == 0 or len(matrix[0]) == 0 or maitrix is None:
+    if len(matrix) == 0 or len(matrix[0]) == 0:
         raise ValueError(f"{name} can't be empty")
     row_size = len(matrix[0])
     for row in matrix:
@@ -36,7 +36,7 @@ def matrix_mul(m_a, m_b):
     validate_matrix(m_b, "m_b")
     if len(m_a[0]) != len(m_b[0]):
         raise ValueError("m_a and m_b can't be multiplied")
-    if len(m_a[0]) != len(m_bi[0]):
+    if len(m_a[0]) != len(m_b[0]):
         raise ValueError("m_a and m_b can't be multiplied")
 
     result = []

@@ -7,7 +7,7 @@ def validate_matrix(matrix, name):
         raise TypeError(f"{name} must be a list")
     if not all(isinstance(row, list) for row in matrix):
         raise TypeError(f"{name} must be a list of lists")
-    if len(matrix) == 0:
+    if len(matrix) == 0 or len(matrix[0]) == 0:
         raise ValueError(f"{name} can't be empty")
     row_size = len(matrix[0])
     for row in matrix:
@@ -29,7 +29,10 @@ def lazy_matrix_mul(m_a, m_b):
     validate_matrix(m_a, "m_a")
     validate_matrix(m_b, "m_b")
 
-    if len(m_a[0]) != len(m_b):
+    if len(m_a) != len(m_b):
+        raise ValueError("m_a and m_b can't be multiplied")
+
+    if len(m_a[0]) != len(m_b[0]):
         raise ValueError("m_a and m_b can't be multiplied")
     result = np.matmul(m_a, m_b)
     return result

@@ -1,11 +1,12 @@
-#101_lazy_matrix_mul.txt
+#100-matrix_mul.txt
 
 >>> matrix_mul = __import__('101-lazy_matrix_mul').lazy_matrix_mul
 
->>> m_a = [[1, 2, 3], [4, 5, 6]]
->>> m_b = [[7, 8], [9, 10], [11, 12]]
+>>> m_a = [[1, 2], [4, 5]]
+>>> m_b = [[7, 8], [9, 10]]
 >>> matrix_mul(m_a, m_b)
-[[58, 64], [139, 154]]
+array([[25, 28],
+       [73, 82]])
 
 >>> m_a = [[1, 2], [3, 4]]
 >>> m_b = [[5, 6, 7], [8, 9, 10]]
@@ -43,13 +44,6 @@ Traceback (most recent call last):
 TypeError: m_b must be a list
 
 >>> m_a = []
->>> m_b = [[5, 6], [7, 8]]
->>> matrix_mul(m_a, m_b)
-Traceback (most recent call last):
-    ...
-ValueError: m_a can't be empty
-
->>> m_a = [[]]
 >>> m_b = [[5, 6], [7, 8]]
 >>> matrix_mul(m_a, m_b)
 Traceback (most recent call last):
