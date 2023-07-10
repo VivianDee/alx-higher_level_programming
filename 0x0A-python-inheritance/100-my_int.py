@@ -6,10 +6,6 @@ class MyInt(int):
     """
     A class that inherits from int
     """
-    def __init__(self, val):
-        """Initializes val"""
-        if type(val) is int:
-            self.__val = val
 
     def __eq__(self, x):
         """Replace __ne__ magic class"""
