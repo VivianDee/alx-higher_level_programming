@@ -4,6 +4,7 @@
 The function is_kind_of_class
 """
 
+
 def is_kind_of_class(obj, a_class):
     """
     Checks if an object is a kind of instance of the specified class

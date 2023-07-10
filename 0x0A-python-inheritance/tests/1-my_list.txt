@@ -17,3 +17,19 @@
 >>> list = MyList([])
 >>> list.print_sorted()
 []
+
+>>> list = MyList([5, 2, 1, 2, 5])
+>>> list.print_sorted()
+[1, 2, 2, 5, 5]
+
+>>> list = MyList(['apple', 'banana', 'cherry', 'date'])
+>>> list.print_sorted()
+['apple', 'banana', 'cherry', 'date']
+
+>>> list = MyList([3.14, 2.718, 1.618, 0.123])
+>>> list.print_sorted()
+[0.123, 1.618, 2.718, 3.14]
+
+>>> list = MyList([True, False, True, False])
+>>> list.print_sorted()
+[False, False, True, True]

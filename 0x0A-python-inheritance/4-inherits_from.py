@@ -4,6 +4,7 @@
 The function inherits_from
 """
 
+
 def inherits_from(obj, a_class):
     """
     Checks if an object is an instance of a subclass of a_class
