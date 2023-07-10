@@ -4,6 +4,7 @@
     The class MyList
 """
 
+
 class MyList(list):
     """
     MyList is inherits from list
