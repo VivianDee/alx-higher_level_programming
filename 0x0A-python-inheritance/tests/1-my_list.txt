@@ -1,0 +1,19 @@
+#1-my_list.txt
+
+>>> MyList = __import__('1-my_list').MyList
+
+>>> list = MyList([7, 9, 4, 10])
+>>> list.print_sorted()
+[4, 7, 9, 10]
+
+>>> list = MyList([70, 9, 400, 10])
+>>> list.print_sorted()
+[9, 10, 70, 400]
+
+>>> list = MyList([10])
+>>> list.print_sorted()
+[10]
+
+>>> list = MyList([])
+>>> list.print_sorted()
+[]
