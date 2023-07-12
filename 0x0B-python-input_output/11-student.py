@@ -7,11 +7,11 @@ class Student():
     """Defines a student by their first and ladt name, and age"""
 
     def __init__(self, first_name, last_name, age):
-        """ 
+        """
         Initializes the firstname, lastname and age
 
         Args:
-            firstname: The student's firstname 
+            firstname: The student's firstname
             lastname: The student's last name
             age: The student's age
         """
@@ -36,8 +36,8 @@ class Student():
             if i == 'age':
                 dictionary[i] = result[i]
         return dictionary
+
     def reload_from_json(self, json):
         """Replaces all attributes of the instance"""
         for key, value in json.items():
             setattr(self, key, value)
-
