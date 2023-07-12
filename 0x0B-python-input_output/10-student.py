@@ -23,18 +23,17 @@ class Student():
         """Retreives a json string of the class instance"""
         class_to_json = __import__('8-class_to_json').class_to_json
 
+        result = self.__dict__
+
         if attrs is None:
-            return class_to_json(self)
+            return result
 
         dictionary = {}
         for i in attrs:
             if i == 'first_name':
-                result = class_to_json(self)
                 dictionary[i] = result[i]
             if i == 'last_name':
-                result = class_to_json(self)
                 dictionary[i] = result[i]
             if i == 'age':
-                result = class_to_json(self)
                 dictionary[i] = result[i]
         return dictionary

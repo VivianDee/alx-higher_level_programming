@@ -20,5 +20,4 @@ class Student():
 
     def to_json(self):
         """Retreives a json string of the class instance"""
-        class_to_json = __import__('8-class_to_json').class_to_json
-        return class_to_json(self)
+        return self.__dict__
