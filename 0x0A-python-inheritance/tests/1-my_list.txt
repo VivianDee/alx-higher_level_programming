@@ -33,3 +33,10 @@
 >>> list = MyList([True, False, True, False])
 >>> list.print_sorted()
 [False, False, True, True]
+
+>>> print(list)
+[True, False, True, False]
+
+>>> list.append(False)
+>>> list.print_sorted()
+[False, False, False, True, True]
