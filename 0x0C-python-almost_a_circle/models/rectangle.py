@@ -24,8 +24,7 @@ class Rectangle(Base):
         self.__height = height
         self.__x = x
         self.__y = y
-        if id is not None:
-            super().__init__(id)
+        super().__init__(id)
 
     @property
     def width(self):
@@ -75,5 +74,4 @@ class Rectangle(Base):
     @id.setter
     def id(self, value=None):
         """Sets the id to value"""
-        if value is not None:
-            type(self).id = value
+        type(self).id = value
