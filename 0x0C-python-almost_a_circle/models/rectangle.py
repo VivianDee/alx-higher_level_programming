@@ -19,9 +19,22 @@ class Rectangle(Base):
             height: height of Rectangle
             x: A number
             y: A number
+
+        Raises:
+            Typeerror: If the input is not an integer
+            ValueError: If the input is less than or equal to 0
         """
-        self.__width = width
-        self.__height = height
+        for key, value in {"width": width, "height": height, "x": x, "y": y}:
+            if type(value) != int:
+                raise TypeError("{} must be an integer".format(key))
+        if type(height) == int
+            if width > 0:
+                self.__height = height
+            else:
+                raise ValueError("height must be > 0")
+        else:
+            raise TypeError(height must be an integer)
+
         self.__x = x
         self.__y = y
         super().__init__(id)
