@@ -31,7 +31,10 @@ class Base:
         """
         if list_dictionaries is None or len(list_dictionaries) == 0:
             return "[]"
-        return json.dumps(list_dictionaries)
+        try:
+            return json.dumps(list_dictionaries)
+        except Exception:
+            return json.dumps([obj.to_dictionary() for obj in list_dictionaries])
 
     @classmethod
     def save_to_file(cls, list_objs):
@@ -43,8 +46,7 @@ class Base:
             if list_objs is None:
                 f.write("[]")
             else:
-                json_string = json.dumps([obj.to_dictionary()
-                                          for obj in list_objs])
+                json_string = cls.to_json_string(list_objs)
                 f.write(json_string)
 
     def from_json_string(json_string):
