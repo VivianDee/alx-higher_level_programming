@@ -6,7 +6,6 @@
 from models.base import Base
 
 
-
 class Rectangle(Base):
     """Inherits from Class Base"""
     def __init__(self, width, height, x=0, y=0, id=None):
@@ -23,7 +22,8 @@ class Rectangle(Base):
             Typeerror: If the input is not an integer
             ValueError: If the input is less than or equal to 0
         """
-        for key, value in ({"width": width, "height": height, "x": x, "y": y}).items():
+        for key, value in ({"width": width, "height": height,
+                            "x": x, "y": y}).items():
             if type(value) != int:
                 raise TypeError("{} must be an integer".format(key))
         for key, value in ({"width": width, "height": height}).items():
@@ -81,7 +81,7 @@ class Rectangle(Base):
 
         if value <= 0:
             raise ValueError("height must be > 0")
-        self.__height =  value
+        self.__height = value
 
     @x.setter
     def x(self, value=0):
@@ -122,7 +122,12 @@ class Rectangle(Base):
 
     def __str__(self):
         """Returns a string representation of the Rectangle instance"""
-        return "[{}] ({}) {}/{} - {}/{}".format(self.__class__.__name__, type(self).id, self.__x, self.__y, self.__width, self.__height)
+        return "[{}] ({}) {}/{} - {}/{}".format(self.__class__.__name__,
+                                                type(self).id,
+                                                self.__x,
+                                                self.__y,
+                                                self.__width,
+                                                self.__height)
 
     def display(self):
         """
@@ -130,7 +135,7 @@ class Rectangle(Base):
         with the character # by taking care of x and y
         """
         for i in range(0, self.__y):
-            print( )
+            print()
         for i in range(0, self.__height):
             print(' ' * self.__x + "#" * self.__width)
 
@@ -162,4 +167,5 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         """Returns the dictionary representation of a Rectangle"""
-        return {"width": self.__width, "height": self.__height, "x": self.__x, "y": self.__y, "id": type(self).id}
+        return {"width": self.__width, "height": self.__height,
+                "x": self.__x, "y": self.__y, "id": type(self).id}

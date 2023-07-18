@@ -6,7 +6,6 @@
 from models.rectangle import Rectangle
 
 
-
 class Square(Rectangle):
     """Inherits from Class Rectangle"""
     def __init__(self, size, x=0, y=0, id=None):
@@ -20,6 +19,7 @@ class Square(Rectangle):
             id: id of the Square
         """
         super().__init__(size, size, x, y, id)
+
     def __str__(self):
         """Returns a string representation of the Square instance"""
         return "[{}] ({}) {}/{} - {}".format(
@@ -62,5 +62,6 @@ class Square(Rectangle):
                     self.id = val
 
     def to_dictionary(self):
-         """Returns the dictionary representation of a Square"""
-         return {"width": self.width, "height": self.height, "x": self.x, "y": self.y, "id": self.id}
+        """Returns the dictionary representation of a Square"""
+        return {"width": self.width, "height": self.height,
+                "x": self.x, "y": self.y, "id": self.id}
