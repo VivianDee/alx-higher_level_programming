@@ -34,7 +34,8 @@ class Base:
         try:
             return json.dumps(list_dictionaries)
         except Exception:
-            return json.dumps([obj.to_dictionary() for obj in list_dictionaries])
+            return json.dumps([obj.to_dictionary()
+                              for obj in list_dictionaries])
 
     @classmethod
     def save_to_file(cls, list_objs):
