@@ -8,7 +8,7 @@ for (let i = 2; i < len; i++) {
     low = high;
     high = parseInt(args[i]);
   } else if (parseInt(args[i]) > low && parseInt(args[i]) < high) {
-	  low = parseInt(args[i]);
+    low = parseInt(args[i]);
   }
 }
 console.log(low);
