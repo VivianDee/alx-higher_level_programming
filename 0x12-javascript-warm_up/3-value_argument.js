@@ -1,7 +1,6 @@
 #!/usr/bin/node
 const args = process.argv;
-const len = args.length;
-if (len < 3) {
+if (typeof args[2] === "undefined") {
   console.log('No argument');
 } else {
   console.log(args[2]);
