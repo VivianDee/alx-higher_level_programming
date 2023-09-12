@@ -7,6 +7,10 @@ module.exports = class Square extends Rectangle {
   }
 
   charPrint (c) {
-    this.print(c);
+    if (!c) {
+      this.print();
+    } else {
+      this.print(c);
+    }
   }
 };
