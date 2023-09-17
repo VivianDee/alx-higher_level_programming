@@ -17,8 +17,7 @@ if __name__ == "__main__":
     cur.execute(param, (sys.argv[4],))
     state = cur.fetchone()
     val = state[0]
-    param2 = "SELECT * FROM cities WHERE
-    cities.state_id = %s ORDER BY cities.id ASC"
+    param2 = "SELECT * FROM cities WHERE cities.state_id = %s ORDER BY cities.id ASC"
     cur.execute(param2, (val,))
     cities = cur.fetchall()
     length = len(cities)

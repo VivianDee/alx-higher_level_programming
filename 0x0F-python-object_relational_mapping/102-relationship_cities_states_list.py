@@ -4,6 +4,7 @@
 """
 
 from model_state import Base, State
+from model_city import City
 from sqlalchemy import create_engine
 import sys
 from sqlalchemy.orm import sessionmaker
@@ -15,7 +16,8 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    for row in session.query(State).filter(State.name == sys.argv[4]).order_by(State.id).all():
-        print(row.id)
+    for row in session.query(City).order_by(City.id).all():
+        state = session.query(State).filter(State.id == row.state_id).first()
+        print("{}: {} -> {}".format(row.id, row.name, state.name))
 
     session.close()

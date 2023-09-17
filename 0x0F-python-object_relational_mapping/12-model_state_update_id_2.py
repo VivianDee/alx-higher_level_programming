@@ -15,7 +15,8 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    for row in session.query(State).filter(State.name == sys.argv[4]).order_by(State.id).all():
-        print(row.id)
+    result = session.query(State).filter(State.id == 2).first()
+    result.name = 'New Mexico'
 
+    session.commit()
     session.close()
