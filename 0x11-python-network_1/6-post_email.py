@@ -9,5 +9,5 @@ import sys
 if __name__ == "__main__":
     value = {'email': sys.argv[2]}
     url = sys.argv[1]
-    data = requests.post(url, data=valu)
+    data = requests.post(url, data=value)
     print(data.text)
