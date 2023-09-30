@@ -8,4 +8,7 @@ from requests.auth import HTTPBasicAuth
 if __name__ == "__main__":
     auth = HTTPBasicAuth(sys.argv[1], sys.argv[2])
     data = requests.get("https://api.github.com/user", auth=auth)
-    print(data.json()["id"])
+    try:
+        print(data.json()["id"])
+    except Exception:
+        print("None")
