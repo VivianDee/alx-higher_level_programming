@@ -7,6 +7,10 @@ const link = process.argv[2];
 request(link, (error, response, body) => {
   if (error) throw error;
 
+  if (response.statusCode !== 200) {
+    console.log('Error:', response.statusCode);
+  }
+
   const data = JSON.parse(body);
   const result = {};
   let id = 0;
