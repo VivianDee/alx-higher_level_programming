@@ -10,13 +10,22 @@ request(link, (error, response, body) => {
   const data = JSON.parse(body);
   const characters = data.characters;
 
-  characters.forEach((character) => {
+  function fetchCharacters (character, idx) {
+    if (idx >= characters.length) {
+      return;
+    }
+
+    character = characters[idx];
+
     request(character, (charError, charResponse, charBody) => {
       if (charError) console.error(charError);
 
       const charData = JSON.parse(charBody);
 
       console.log(charData.name);
+      fetchCharacters(character, idx + 1);
     });
-  });
+  }
+
+  fetchCharacters(characters, 0);
 });
