@@ -5,10 +5,14 @@ const request = require('request');
 const link = process.argv[2];
 
 request(link, (error, response, body) => {
-  if (error) throw error;
+  if (error) {
+    console.log(error);
+    process.exit();
+  }
 
   if (response.statusCode !== 200) {
     console.log('Error:', response.statusCode);
+    process.exit();
   }
 
   const data = JSON.parse(body);
